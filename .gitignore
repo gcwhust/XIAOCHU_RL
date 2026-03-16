@@ -35,3 +35,4 @@ _repo
 _build
 .lastformat
 nohup.out
+*.usd
