@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- IMU Link and Joint Definition -->
+  <xacro:macro name="imu_sensor" params="name parent_link xyz:='0 0 0' rpy:='0 0 0'">
+    
+    <!-- IMU Link -->
+    <link name="${name}_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.01"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      </inertial>
+      
+      <!-- Visual representation -->
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.02 0.02 0.01"></box>
+        </geometry>
+        <material name="imu_material">
+          <color rgba="0.2 0.2 0.2 0.8"/>
+        </material>
+      </visual>
+      
+      <!-- Collision geometry -->
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.02 0.02 0.01"></box>
+        </geometry>
+      </collision>
+    </link>
+    
+    <!-- Fixed joint connecting IMU to parent link -->
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${name}_link"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+    
+  </xacro:macro>
+
+</robot>

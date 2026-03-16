@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'right_hip_pitch', 'right_knee_pitch', 'right_assist', 'right_wheel_joint', 'left_hip_pitch', 'left_knee_pitch', 'left_assist', 'left_wheel_joint', 'right_shoulder_pitch', 'right_shoulder_roll', 'right_elbow_pitch', 'left_shoulder_pitch', 'left_shoulder_roll', 'left_elbow_pitch', ]

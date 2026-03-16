@@ -1,0 +1,26 @@
+{
+    // 指向 Isaac Sim 提供的 kit-python 启动脚本（用于运行需要 omni.* 的代码）
+    "python.defaultInterpreterPath": "/home/user/isaac-sim/python.sh",
+
+    // 在终端里不要自动激活虚拟环境（kit-python 启动脚本会自行设置环境）
+    "python.terminal.activateEnvironment": true,
+
+    // 为语言服务器和自动补全提供额外的搜索路径（添加项目根、IsaacLab 源码与 ext）
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/_isaac_sim/python",
+        "${workspaceFolder}/_isaac_sim/python/lib",
+        "${workspaceFolder}",
+        "${workspaceFolder}/IsaacLab/source",
+        "${workspaceFolder}/exts"
+    ],
+    "editor.rulers": [88, 120],
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    }
+}
